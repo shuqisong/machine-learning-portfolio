@@ -27,6 +27,12 @@ KAGGLE_DATASET = "shubhammehta21/movie-lens-small-latest-dataset"
 # Resolve data/raw/ relative to this file, so the script works from anywhere.
 RAW_DIR = Path(__file__).resolve().parent.parent / "data" / "raw"
 
+# Use the `kaggle` CLI that lives next to the current Python interpreter.
+# This works whether or not the venv is "activated", as long as you run the
+# script with the venv's python (e.g. .venv/bin/python src/download_data.py).
+KAGGLE_BIN = Path(sys.executable).parent / "kaggle"
+KAGGLE_CMD = str(KAGGLE_BIN) if KAGGLE_BIN.exists() else "kaggle"
+
 
 def main() -> None:
     RAW_DIR.mkdir(parents=True, exist_ok=True)
@@ -35,7 +41,7 @@ def main() -> None:
     try:
         subprocess.run(
             [
-                "kaggle", "datasets", "download",
+                KAGGLE_CMD, "datasets", "download",
                 "-d", KAGGLE_DATASET,
                 "-p", str(RAW_DIR),
                 "--unzip",
