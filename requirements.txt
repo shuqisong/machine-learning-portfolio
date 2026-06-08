@@ -1,0 +1,28 @@
+# Core data science workspace dependencies.
+# Install with:  .venv/bin/pip install -r requirements.txt
+
+# --- Data manipulation ---
+pandas
+numpy
+
+# --- Visualization ---
+matplotlib
+seaborn
+
+# --- Machine learning ---
+scikit-learn
+scipy
+
+# --- Recommendation systems ---
+# scikit-surprise: classic collaborative-filtering library (SVD, KNN, etc.)
+scikit-surprise
+
+# --- Notebooks ---
+jupyterlab
+ipykernel
+
+# --- Kaggle data access ---
+kaggle
+
+# --- Progress bars / utilities ---
+tqdm

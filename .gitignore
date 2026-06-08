@@ -1,0 +1,42 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# ---- Virtual environments ----
+.venv/
+venv/
+env/
+
+# ---- Data (never commit raw datasets — they're downloaded, not source) ----
+# Keep the folder structure but ignore the actual data files.
+data/raw/*
+data/processed/*
+data/external/*
+!**/data/raw/.gitkeep
+!**/data/processed/.gitkeep
+*.csv
+*.tsv
+*.parquet
+*.zip
+*.dat
+
+# ---- Trained models (large binaries; regenerate from code) ----
+models/*
+!**/models/.gitkeep
+*.pkl
+*.joblib
+*.h5
+
+# ---- Secrets ----
+# Kaggle credentials must NEVER be committed.
+kaggle.json
+.env
+*.key
+
+# ---- OS / editor ----
+.DS_Store
+.vscode/
+.idea/
