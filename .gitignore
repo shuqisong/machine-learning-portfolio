@@ -40,3 +40,7 @@ kaggle.json
 .DS_Store
 .vscode/
 .idea/
+
+# Local workspace files
+CLAUDE.md
+README.md
